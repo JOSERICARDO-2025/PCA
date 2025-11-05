@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Anillo de fondo (el color gris de la pista) -->
+    <item>
+        <shape
+            android:shape="ring"
+            android:innerRadiusRatio="2.5"
+            android:thickness="8dp"
+            android:useLevel="false">
+            <solid android:color="#E0F2F1" /> <!-- Un verde muy pálido o gris claro -->
+        </shape>
+    </item>
+
+    <!-- Anillo de progreso (el color verde principal) -->
+    <item>
+        <rotate
+            android:fromDegrees="-90"
+            android:toDegrees="-90">
+            <shape
+                android:shape="ring"
+                android:innerRadiusRatio="2.5"
+                android:thickness="8dp"
+                android:useLevel="true"> <!-- useLevel=true es crucial para que funcione con ProgressBar -->
+                <solid android:color="#00A79D" /> <!-- Tu color menta principal -->
+            </shape>
+        </rotate>
+    </item>
+</layer-list>

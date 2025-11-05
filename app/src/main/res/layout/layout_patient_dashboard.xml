@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Saludo Amigable --><LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hola de nuevo,"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="#6C757D"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carlos González"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textStyle="bold"
+                android:textColor="#343A40"/>
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            app:shapeAppearanceOverlay="@style/Widget.MaterialComponents.CardView"
+            app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
+            app:srcCompat="@drawable/ic_profile_placeholder" />
+
+    </LinearLayout>
+
+        <!-- Tarjeta de Cita Héroe --><com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:background="#00A79D" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tu Próxima Cita"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textStyle="bold"
+                    android:textColor="#343A40"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Martes, 12 de Nov - 10:30 AM"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    android:layout_marginTop="12dp"
+                    android:drawablePadding="8dp"
+                    app:drawableStartCompat="@drawable/ic_calendar_teal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Limpieza Dental y Revisión"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="#6C757D"
+                    android:layout_marginTop="4dp"
+                    android:drawablePadding="8dp"
+                    app:drawableStartCompat="@drawable/ic_treatment_grey"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_confirmar_cita"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmar Asistencia"
+                    android:layout_marginTop="16dp"
+                    android:paddingVertical="12dp"
+                    app:cornerRadius="12dp"
+                    android:backgroundTint="#00A79D"/>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+        <!-- Gráfica de Salud Dental (Simulada, requeriría librería de gráficos) --><com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="@color/white">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tu Salud Dental General"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textStyle="bold"
+                android:textColor="#343A40"/>
+
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp">
+                <!-- Esto sería el contenedor para la gráfica real (ej. MPAndroidChart) --><ProgressBar
+                android:id="@+id/progress_salud_dental"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:progress="75"
+                android:progressDrawable="@drawable/circular_progress_bar_green" /> <!-- Drawable para progreso circular --><TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="75%"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textColor="#00A79D"/>
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Buen progreso! Sigue así con tu higiene."
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="#6C757D"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tus Tratamientos Activos --><TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mis Tratamientos Activos"
+        android:layout_marginTop="24dp"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        android:textColor="#343A40"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_tratamientos_activos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_treatment_card_with_progress"/> <!-- Un nuevo item de tratamiento con progreso --></LinearLayout>
+</androidx.core.widget.NestedScrollView>

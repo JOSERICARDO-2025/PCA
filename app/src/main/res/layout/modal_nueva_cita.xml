@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"> <!-- Un fondo gris muy claro, no blanco puro -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Saludo Amigable -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hola de nuevo,"
+                    android:textAppearance="?attr/textAppearanceSubtitle1"
+                    android:textColor="#6C757D"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Carlos González"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textStyle="bold"
+                    android:textColor="#343A40"/>
+            </LinearLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                app:shapeAppearanceOverlay="@style/Widget.MaterialComponents.CardView"
+                app:shapeAppearance="?attr/shapeAppearanceMediumComponent"
+                app:srcCompat="@drawable/ic_profile_placeholder" /> <!-- Asumir un placeholder de perfil -->
+
+        </LinearLayout>
+
+        <!-- Tarjeta de Cita Héroe -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/white"> <!-- Color menta suave: #E0F2F1 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Barra de color lateral para estética -->
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="#00A79D" /> <!-- Color menta principal -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tu Próxima Cita"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textStyle="bold"
+                        android:textColor="#343A40"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Martes, 12 de Nov - 10:30 AM"
+                        android:textAppearance="?attr/textAppearanceBody1"
+                        android:layout_marginTop="12dp"
+                        android:drawablePadding="8dp"
+                        app:drawableStartCompat="@drawable/ic_calendar_teal"/> <!-- Icono de calendario -->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Limpieza Dental y Revisión"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="#6C757D"
+                        android:layout_marginTop="4dp"
+                        android:drawablePadding="8dp"
+                        app:drawableStartCompat="@drawable/ic_treatment_grey"/> <!-- Icono de tratamiento -->
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_confirmar_cita"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Confirmar Asistencia"
+                        android:layout_marginTop="16dp"
+                        android:paddingVertical="12dp"
+                        app:cornerRadius="12dp"
+                        android:backgroundTint="#00A79D"/> <!-- Botón con color principal -->
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Acciones Rápidas (Más estético con un RecyclerView horizontal) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acciones Rápidas"
+            android:layout_marginTop="24dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="#343A40"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_acciones_rapidas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_accion_rapida"/> <!-- Asumir un item_accion_rapida (tarjeta pequeña) -->
+
+        <!-- Tip de Salud -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardBackgroundColor="#E6FFFA"
+            app:strokeWidth="1dp"
+            app:strokeColor="#B2DFDB">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@drawable/ic_idea_bulb" /> <!-- Icono de idea/foco -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Tip: ¿Sabías que el hilo dental puede prevenir caries entre dientes? Úsalo una vez al día."
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="#004D40"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

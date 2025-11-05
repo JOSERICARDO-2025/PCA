@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar_admin"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Panel de Administración"
+            android:background="@color/white"
+            app:titleTextColor="#343A40"
+            android:elevation="4dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Calendario Semanal de Citas (con indicación de citas) --><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Agenda Semanal"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="#343A40"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+                    <!-- Esto se generaría dinámicamente o usaría una librería de calendario --><LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" app:srcCompat="@drawable/ic_arrow_left_grey"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Noviembre 2024" android:gravity="center" android:textAppearance="?attr/textAppearanceSubtitle1" android:textColor="#343A40"/>
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" app:srcCompat="@drawable/ic_arrow_right_grey"/>
+                </LinearLayout>
+
+                    <!-- Fila de Días de la semana --><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Lun" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Mar" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Mié" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Jue" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Vie" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Sáb" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                    <TextView android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:text="Dom" android:gravity="center" android:textAppearance="?attr/textAppearanceCaption" android:textColor="#6C757D"/>
+                </LinearLayout>
+
+                    <!-- Fila de Números de día (ejemplo para una semana) --><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginTop="4dp">
+                    <!-- Día con cita --><LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#343A40"/>
+                    <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/calendar_dot_green" android:layout_marginTop="2dp"/>
+                </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#343A40"/>
+                        <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/calendar_dot_green" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="13" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#D32F2F"/>
+                        <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/calendar_dot_red" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="14" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#343A40"/>
+                        <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/calendar_dot_green" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#343A40"/>
+                        <View android:layout_width="6dp" android:layout_height="6dp" android:background="@drawable/calendar_dot_blue" android:layout_marginTop="2dp"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="16" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#6C757D"/>
+                    </LinearLayout>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="17" android:textAppearance="?attr/textAppearanceBody1" android:textColor="#6C757D"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                    <!-- Leyenda (opcional) --><LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="end"
+                    android:orientation="horizontal">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/calendar_dot_green"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" Dr. Ana" android:layout_marginStart="4dp" android:layout_marginEnd="12dp" android:textAppearance="?attr/textAppearanceCaption"/>
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/calendar_dot_blue"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" Dr. Juan" android:layout_marginStart="4dp" android:layout_marginEnd="12dp" android:textAppearance="?attr/textAppearanceCaption"/>
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/calendar_dot_red"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" Pendientes" android:layout_marginStart="4dp" android:textAppearance="?attr/textAppearanceCaption"/>
+                </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- Gráfica de Ocupación de Dentistas (Simulada) --><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ocupación por Dentista (Semanal)"
+            android:layout_marginTop="24dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="#343A40"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <!-- Placeholder para gráfica de barras/pie, requeriría una librería --><TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gráfica de Ocupación Aquí"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="#6C757D"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@drawable/chart_placeholder_bars" /> <!-- Imagen de placeholder para gráfica de barras --></LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Gráfica de Servicios Populares (Simulada) --><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Servicios Más Solicitados (Mensual)"
+            android:layout_marginTop="24dp"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="#343A40"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="12dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="@color/white">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+                    <!-- Placeholder para gráfica de pastel/barras, requeriría una librería --><TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gráfica de Servicios Aquí"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textColor="#6C757D"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:src="@drawable/chart_placeholder_pie" /> <!-- Imagen de placeholder para gráfica de pastel --></LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

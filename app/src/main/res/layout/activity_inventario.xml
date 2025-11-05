@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <!-- Encabezado Fijo -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mi Plan de Tratamiento"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textStyle="bold"
+                android:textColor="#343A40"/>
+
+            <TextView
+                android:id="@+id/tv_nombre_tratamiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tratamiento de Ortodoncia"
+                android:textAppearance="?attr/textAppearanceSubtitle1"
+                android:textColor="#00A79D"
+                android:layout_marginTop="4dp"/>
+
+            <!-- Barra de Progreso Visual -->
+            <TextView
+                android:id="@+id/tv_progreso_pasos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progreso: Paso 2 de 5"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="#343A40"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progress_tratamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:progress="40"
+                app:indicatorColor="#00A79D"
+                app:trackColor="#B2DFDB"
+                app:trackCornerRadius="8dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Lista de Pasos (Timeline) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_pasos_tratamiento"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_paso_timeline" /> <!-- Asumir un item_paso_timeline (diseño de línea de tiempo) -->
+
+</LinearLayout>
